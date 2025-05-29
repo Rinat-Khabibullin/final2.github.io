@@ -1,3 +1,6 @@
+@use '/src/scss/base/__fonts' ;
+
+
 *,
 *::before,
 *::after {
@@ -138,7 +141,7 @@ textarea::placeholder {
   padding-bottom: 15px;
   padding-left: 16px;
   overflow-x: auto;
-  
+
 }
 .main__list-item {
     position: relative;
@@ -248,7 +251,7 @@ textarea::placeholder {
   width: 100%;
 }
 /* WIDTH 768PX */
-@media (min-width: 768px) {
+@media (min-width: 768px ) {
   /* HEADER 768PX */
   .menu__left .menu__icon::after {
     content: "";
@@ -415,7 +418,7 @@ textarea::placeholder {
   }
 }
 .heightAuto {
-  height: auto;
+  height: auto !important;
 }
 
 /*_________________________________________
@@ -425,6 +428,7 @@ ____________________________________________
 CONTAINER BRANDS */
 .container {
     position: relative;
+    margin-top: 32px;
 }
 .container__title {
   display: block;
@@ -450,24 +454,21 @@ CONTAINER BRANDS */
     left: 0px;
     background: linear-gradient(to right, #f8f8f8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
     position: absolute;
-    z-index: 10;
+    z-index: 5;
 }
 .wrapperToShadow::after {
     left: auto;
     right: 0px;
     background: linear-gradient(to left, #f8f8f8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
-} 
-.wrapperToShadow.widther::before,
-.wrapperToShadow.widther::after {
-    height: 220px !important;
 }
-
-.swiper-wrapper {
-  margin-bottom: 42px;
+.container--price .wrapperToShadow.widther::before,
+.container--price .wrapperToShadow.widther::after,
+.container--tech .wrapperToShadow.widther::before,
+.container--tech .wrapperToShadow.widther::after {
+    height: 220px;
 }
 .container--brands .swiper-slide__content {
     display: flex;
-    justify-content: ;
 }
 .swiper-wrapper .swiper-slide {
   box-sizing: border-box;
@@ -484,13 +485,11 @@ CONTAINER BRANDS */
   background-color: #ffffff;
 }
 
-
-
-
 .swiper-pagination .swiper-pagination-bullet {
   background-color: #42424287;
   width: 12px;
   height: 12px;
+
 }
 
 .container__readMore {
@@ -506,7 +505,15 @@ CONTAINER BRANDS */
     overflow: hidden;
     row-gap: 16px;
     list-style: none;
-    height: 194px;
+    height: 150px;
+  }
+  #remont-brendov .swiper-wrapper {
+    height: 150px;
+
+  }
+  .wrapperToShadow::before,
+  .wrapperToShadow::after {
+    display: none;
   }
 
   .container__title {
@@ -593,15 +600,15 @@ CONTAINER TECH */
 .container--tech {
   margin-top: 50px;
 }
-.container--tech .swiper-slide {
+#remont-tehniki .swiper-slide {
   height: 160px;
   background-position: 90% 85%;
   font-size: 16px;
   padding: 16px;
 }
-.container--tech .swiper-slide__content {
+#remont-tehniki .swiper-slide__content {
   align-self: flex-start;
-width: 100%;
+  width: 100%;
   height: 100%;
 }
 /* CONTAINER TECH_________________________________________
@@ -609,7 +616,7 @@ ____________________________________________
 ____________________________________________
 ____________________________________________
 CONTAINER PRICE */
-.container--price .swiper-slide {
+#container-prices .swiper-slide {
   background-image: url(img/order.svg);
   background-position: 90% 85%;
   width: 260px;
@@ -620,7 +627,7 @@ CONTAINER PRICE */
 .container__description {
   display: none;
 }
-.container--price .swiper-slide__content {
+#container-prices .swiper-slide__content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -628,7 +635,7 @@ CONTAINER PRICE */
   height: 100%;
   padding-top: 20px;
 }
-.container--price .swiper-slide__content p {
+#container-prices .swiper-slide__content p {
   margin: 0;
   display: block;
   position: relative;
@@ -676,6 +683,8 @@ CONTAINER PRICE */
   top: 4px;
 }
 .footer__text {
+  margin-top: 74px;
+  margin-left: 24px;
   display: flex;
   padding: 16px;
   flex-direction: column;
@@ -703,14 +712,15 @@ CONTAINER PRICE */
   .container__description p:last-child {
     width: 38%;
   }
-  .container--price .swiper-wrapper {
+  #container-prices .swiper-wrapper {
     height: auto;
+    width: auto;
     gap: 0;
     padding: 0;
     margin: 24px;
     border-radius: 6px;
   }
-  .container--price .swiper-slide {
+  #container-prices .swiper-slide {
     width: 100%;
     height: 64px;
     background-position: 97% 50%;
@@ -727,7 +737,7 @@ CONTAINER PRICE */
     bottom: 0;
     background-color: #eaeaea;
   }
-  .container--price .swiper-slide__content {
+  #container-prices .swiper-slide__content {
     flex-direction: row;
     padding: 0;
     justify-content: flex-start;
@@ -771,7 +781,6 @@ CONTAINER PRICE */
 .aside a {
   text-decoration: none;
   color: #1b1c21;
-
 }
 
 .aside {
@@ -787,7 +796,7 @@ CONTAINER PRICE */
     -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
   display: none;
   background-color: #ffffff;
-  z-index: 1;
+  z-index: 11;
 }
 
 /* ASIDE HEADER */
@@ -971,16 +980,23 @@ margin-top: 50px;
 
 .displayFlex {
   display: flex;
-  z-index: 10;
-}
-.zIndex {
-  z-index: 100;
+  z-index: 1;
 }
 .displayBlock {
   display: block !important;
 }
+.div-blur {
+  display: none;
+}
 .blur {
-  filter: blur(5px);
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.96);
+  z-index: 10;
 }
 
 /* Modal */
@@ -995,12 +1011,13 @@ margin-top: 50px;
     box-shadow: 16px 0px 52px 0px #0E185033,
                 -2px 0px 4px 0px #454F7E05;
     display: none;
+    z-index: 11;
 }
 
 .modal__content {
     display: flex;
     flex-direction: column;
-    
+
 }
 .modal__closeBtn {
     width: 40px;
@@ -1027,11 +1044,11 @@ margin-top: 50px;
     content: "";
     width: 4px;
     height: 32px;
-    
+
     top: -2px;
     left: -16px;
     background-image: url(img/highlight.svg);
-    
+
 }
 .modal__form a {
     color: #FF3E79;
@@ -1088,4 +1105,3 @@ margin-top: 50px;
     border-radius: 3px;
 }
 }
-

@@ -1,3 +1,5 @@
+import Swiper from 'swiper';
+
 let mainList = document.querySelector('.main__list-services');
 let listItem = mainList.children;
 
@@ -9,9 +11,6 @@ for (let i = 0; i < listItem.length; i++) {
     listItem[i].classList.add('list-services__item--active');
     })
 }
-
-
-
 
 // READ MORE BUTTON
 let main = document.querySelector(".main");
@@ -28,6 +27,7 @@ mainReadMoreBtn.addEventListener("click", function () {
   }
 });
 
+
 // ___________________________________
 
 let mql = window.matchMedia("(max-width: 767px)");
@@ -36,6 +36,10 @@ let swiperSlider = null;
 if (mql.matches) {
   swiperSlider = new Swiper(".swiper", {
     centeredSlides: false,
+    pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    },
     breakpoints: {
       320: {
         slidesPerView: 1.3,
@@ -59,10 +63,6 @@ if (mql.matches) {
         slidesPerView: 2.7,
       },
     },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
     spaceBetween: 24,
     grabCursor: true,
     init: true,
@@ -70,19 +70,26 @@ if (mql.matches) {
 }
 
 window.addEventListener("resize", (e) => {
-  if (mql.matches && swiperSlider === null) {
-    swiperSlider = new Swiper(".swiper", {
-      slidesPerView: "auto",
-      centeredSlides: false,
-      spaceBetween: 24,
-      grabCursor: true,
-      init: true,
-    });
+  if (mql.matches) {
+    if (swiperSlider === null) {
+      swiperSlider = new Swiper(".swiper", {
+        slidesPerView: "auto",
+        centeredSlides: false,
+        spaceBetween: 24,
+        grabCursor: true,
+        init: true,
+      });
+    }
   } else {
-    swiperSlider = null;
-    swiperSlider.destroy();
+    if (swiperSlider) {
+      swiperSlider.forEach((s) => {
+        s.destroy();
+      });
+      swiperSlider = null;
+    }
   }
 });
+
 let container = document.querySelectorAll(".container");
 
 for (let i = 0;i < container.length; i++) {
@@ -110,34 +117,21 @@ let body = document.querySelector('body');
 let burger = body.querySelector('.round-icon--burger');
 let aside = document.querySelector('.aside');
 let buttonCloseAside = body.querySelector('.left__burger');
-let mainConteaner = body.querySelector('.mainContainer');
+let mainConteaner = body.querySelector('.div-blur');
 burger.addEventListener('click', function() {
-
-// document.addEventListener('click', function(event) {
-//   document.addEventListener('click', (e) => {
-//     const withinBoundaries = e.composedPath().includes(aside);
-//     if (!withinBoundaries) {
-//       body.classList.remove('displayFlex');
-//       aside.classList.remove('displayBlock')
-//       mainConteaner.classList.remove('blur')
-//     }
-// })})
-
-//     document.addEventListener('click', function(event) {
-    // if (!aside.contains(event.target)) {
-    // body.classList.remove('displayFlex');
-    // aside.classList.remove('displayBlock')
-    // mainConteaner.classList.remove('blur')
-    // }
-  // });
   body.classList.add('displayFlex');
   aside.classList.add('displayBlock');
   mainConteaner.classList.add('blur');
   buttonCloseAside.addEventListener('click', function() {
     body.classList.remove('displayFlex');
-    aside.classList.remove('displayBlock')
-    mainConteaner.classList.remove('blur')
+    aside.classList.remove('displayBlock');
+    mainConteaner.classList.remove('blur');
     })
+  mainConteaner.addEventListener('click', function() {
+    body.classList.remove('displayFlex');
+    aside.classList.remove('displayBlock');
+    mainConteaner.classList.remove('blur');
+  })
 })
 
 
@@ -150,17 +144,29 @@ let chatFeebbackClose = chatFeebback.querySelector('.modal__closeBtn');
 
 function openChatButton() {
   chatFeebback.classList.add('displayBlock');
+  mainConteaner.classList.add('blur');
   body.classList.remove('displayFlex');
   aside.classList.remove('displayBlock');
-  mainConteaner.classList.remove('blur');
   chatFeebbackClose.addEventListener('click', function() {
     chatFeebback.classList.remove('displayBlock');
-    })
+    mainConteaner.classList.remove('blur');
+    aside.classList.remove('displayBlock');
+    
+  })
+  mainConteaner.addEventListener('click', function() {
+    chatFeebback.classList.remove('displayBlock');
+    mainConteaner.classList.remove('blur');
+    aside.classList.remove('displayBlock');
+  })
 }
 
 
 aisdeChatBtn.addEventListener('click', function() {
   openChatButton()
+    asideTitle.textContent = "Обратная связь";
+    asideNameInp.classList.remove('visually-hidden');
+    asideEmailInp.classList.remove('visually-hidden');
+    asideMessageInp.classList.remove('visually-hidden');
 })
 menuChatBtn.addEventListener('click', function() {
   openChatButton()
