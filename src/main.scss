@@ -1,5 +1,19 @@
 @use '/src/scss/base/__fonts' ;
-
+:root {
+  --white: #ffffff;
+  --white2: #F8F8F8;
+  --whiteGray: #eaeaea;
+  --grayRgba: rgba(126, 126, 130, 1);
+  --gray: #7e7e82;
+  --lightGray: #B5B6BC;
+  --cian: #b8ffec;
+  --cian2: #41f6d7;
+  --cian3: #d9fff5;
+  --pink: #ff3e79;
+  --black: #42424287;
+  --darkBlack: #1b1c21;
+  --blur:  rgba(255, 255, 255, 0.96);
+}
 
 *,
 *::before,
@@ -27,7 +41,7 @@ a {
 button,
 input,
 textarea {
-    border: solid 1px #EAEAEA;
+    border: solid 1px var(--whiteGray);
     border-radius: 8px;
     height: 48px;
     padding: 12px 16px;
@@ -36,7 +50,7 @@ textarea {
 button::placeholder,
 input::placeholder,
 textarea::placeholder {
-    color: #B5B6BC;
+    color: var(--lightGray);
     font-size: 16px;
     line-height: 24px;
 }
@@ -45,8 +59,8 @@ textarea::placeholder {
 }
 /* HEADER 320 */
 .header {
-  background-color: white;
-  border-bottom: 1px solid #b8ffec;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--cian);
 }
 .menu {
   display: flex;
@@ -70,7 +84,7 @@ textarea::placeholder {
   width: 2px;
   height: 32px;
   border-radius: 1px;
-  background-color: #eaeaea;
+  background-color: var(--whiteGray);
   margin: auto;
   margin-right: 20px;
 }
@@ -92,7 +106,7 @@ textarea::placeholder {
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  background-color: #ff3e79;
+  background-color: var(--pink);
   margin: auto;
 }
 .menu__logo {
@@ -122,7 +136,7 @@ textarea::placeholder {
 
 .main__title h1::before {
   content: "";
-  background-color: #41f6d7;
+  background-color: var(--cian2);
   display: inline-block;
   border-radius: 3px;
   width: 3px;
@@ -152,7 +166,7 @@ textarea::placeholder {
     height: 40px;
     top: 0px;
     left: 0px;
-    background: linear-gradient(to right, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+    background: linear-gradient(to right, var(--white2) 16.84%, rgba(248, 248, 248, 0.0001) 100%);
     position: absolute;
 }
 .main__list-servises--wrapper::after {
@@ -161,7 +175,7 @@ textarea::placeholder {
     height: 40px;
     top: 0px;
     right: 0px;
-    background: linear-gradient(to left, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+    background: linear-gradient(to left, var(--white2) 16.84%, rgba(248, 248, 248, 0.0001) 100%);
     position: absolute;
 }
 .list-services__item {
@@ -174,7 +188,7 @@ textarea::placeholder {
   letter-spacing: -0.2px;
   text-align: center;
   min-width: fit-content;
-  color: #7e7e82;
+  color: var(--grayRgba);
   align-items: center;
   margin: 0;
   padding: 0 16px;
@@ -183,7 +197,7 @@ textarea::placeholder {
   display: block;
 }
 .list-services__item--active {
-  border: 2px solid #b8ffec;
+  border: 2px solid var(--cian);
 }
 .main__content {
   margin: 0;
@@ -259,7 +273,7 @@ textarea::placeholder {
     width: 2px;
     height: 32px;
     border-radius: 1px;
-    background-color: #eaeaea;
+    background-color: var(--whiteGray);
     margin: auto;
     margin-left: 60px;
   }
@@ -296,7 +310,7 @@ textarea::placeholder {
     width: 2px;
     height: 32px;
     border-radius: 1px;
-    background-color: #eaeaea;
+    background-color: var(--whiteGray);
     margin: auto;
     margin-left: 18px;
   }
@@ -432,7 +446,7 @@ CONTAINER BRANDS */
 }
 .container__title {
   display: block;
-  background: linear-gradient(90deg, #f8f8f8 0%, #ffffff 98.61%);
+  background: linear-gradient(90deg, var(--white2) 0%, var(--white) 98.61%);
   margin: 0;
   padding: 16px;
   width: 100%;
@@ -442,8 +456,8 @@ CONTAINER BRANDS */
   line-height: 24px;
   letter-spacing: -0.2px;
   text-transform: uppercase;
-  color: #7e7e82;
-  border-top: 1px solid #d9fff5;
+  color: var(--gray);
+  border-top: 1px solid var(--cian3);
 }
 .wrapperToShadow::before,
 .wrapperToShadow::after  {
@@ -452,14 +466,14 @@ CONTAINER BRANDS */
     height: 90px;
     top: 85px;
     left: 0px;
-    background: linear-gradient(to right, #f8f8f8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+    background: linear-gradient(to right, var(--white2) 16.84%, rgba(248, 248, 248, 0.0001) 100%);
     position: absolute;
     z-index: 5;
 }
 .wrapperToShadow::after {
     left: auto;
     right: 0px;
-    background: linear-gradient(to left, #f8f8f8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+    background: linear-gradient(to left,var(--white2) 16.84%, rgba(248, 248, 248, 0.0001) 100%);
 }
 .container--price .wrapperToShadow.widther::before,
 .container--price .wrapperToShadow.widther::after,
@@ -475,18 +489,18 @@ CONTAINER BRANDS */
   display: flex;
   width: 240px;
   height: 72px;
-  border: 1px solid #eaeaea;
+  border: 1px solid var(--whiteGray);
   border-radius: 6px;
   align-items: center;
   padding-left: 16px;
   font-weight: 500;
   font-size: 0;
   background: url(img/go.svg) no-repeat 90% 50%;
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 .swiper-pagination .swiper-pagination-bullet {
-  background-color: #42424287;
+  background-color: var(--black);
   width: 12px;
   height: 12px;
 
@@ -642,13 +656,13 @@ CONTAINER PRICE */
   font-weight: 400;
   line-height: 18px;
   letter-spacing: 0.2px;
-  color: #1b1c21;
+  color: var(--darkBlack);
 }
 .container--price .swiper-slide p::before {
   position: absolute;
   top: -20px;
   left: 0;
-  color: #7e7e82;
+  color: var(--gray);
   font-weight: 500;
   line-height: 16px;
   letter-spacing: 0px;
@@ -670,7 +684,7 @@ CONTAINER PRICE */
 }
 .container__textInform a {
   font-size: 16px;
-  color: #1b1c21;
+  color: var(--darkBlack);
   display: block;
 }
 .textInform__logo {
@@ -690,15 +704,15 @@ CONTAINER PRICE */
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border-top: 1px solid #d9fff5;
-  color: #7e7e82;
+  border-top: 1px solid var(--cian3);
+  color: var(--gray);
 }
 @media (min-width: 768px) {
   .container__description {
     display: flex;
     margin-left: 40px;
     width: 95%;
-    color: #7e7e82;
+    color: var(--gray);
   }
   .container__description p {
     margin-bottom: auto;
@@ -735,7 +749,7 @@ CONTAINER PRICE */
     height: 1px;
     position: absolute;
     bottom: 0;
-    background-color: #eaeaea;
+    background-color: var(--whiteGray);
   }
   #container-prices .swiper-slide__content {
     flex-direction: row;
@@ -780,7 +794,7 @@ CONTAINER PRICE */
 /* ASIDE */
 .aside a {
   text-decoration: none;
-  color: #1b1c21;
+  color: var(--darkBlack);
 }
 
 .aside {
@@ -795,7 +809,7 @@ CONTAINER PRICE */
     16px 0px 52px 0px rgba(14, 24, 80, 0.2),
     -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
   display: none;
-  background-color: #ffffff;
+  background-color: var(--white);
   z-index: 11;
 }
 
@@ -859,7 +873,7 @@ CONTAINER PRICE */
   font-size: 16px;
   line-height: 24px;
   letter-spacing: -0.2px;
-  color: #1b1c21;
+  color: var(--darkBlack);
 }
 .list__item:hover {
   opacity: 40%;
@@ -867,7 +881,7 @@ CONTAINER PRICE */
 
 .list__item-active a {
   position: relative;
-  color: #7e7e82;
+  color: var(--gray);
 }
 .list__item-active a::before {
   content: "";
@@ -913,7 +927,7 @@ margin-top: 50px;
   letter-spacing: -0.2px;
   text-decoration: none;
   margin-top: 11px;
-  color: #1b1c21;
+  color: var(--darkBlack);
 }
 .aside__footer .contacts__tel {
   display: block;
@@ -923,7 +937,7 @@ margin-top: 50px;
   line-height: 32px;
   letter-spacing: -0.6px;
   text-decoration: none;
-  color: #1b1c21;
+  color: var(--darkBlack);
   margin-top: 12px;
 }
 .aside__footer .round-icon {
@@ -947,16 +961,16 @@ margin-top: 50px;
   line-height: 24px;
   letter-spacing: -0.2px;
   text-transform: uppercase;
-  cursor: pointer;
   transition: opacity, 0.4s;
   background: none;
-  color: #1B1C21;
+  color: var(--darkBlack);
 }
 .lang__button:hover {
   opacity: 40%;
+  cursor: pointer;
 }
 .footer__lang .lang__button-active {
-  color: #7e7e82;
+  color: var(--gray);
 }
 
 
@@ -995,7 +1009,7 @@ margin-top: 50px;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.96);
+  background-color: var(--blur);
   z-index: 10;
 }
 
@@ -1006,7 +1020,7 @@ margin-top: 50px;
     position: absolute;
     top: 0;
     right: 0;
-    background-color: #FFFFFF;
+    background-color: var(--white);
     padding: 24px 16px 75px 16px;
     box-shadow: 16px 0px 52px 0px #0E185033,
                 -2px 0px 4px 0px #454F7E05;
@@ -1051,7 +1065,7 @@ margin-top: 50px;
 
 }
 .modal__form a {
-    color: #FF3E79;
+    color: var(--pink);
 }
 .modal__form textarea {
     height: 118px;
@@ -1099,7 +1113,7 @@ margin-top: 50px;
     background-image: none;
     width: 3px;
     height: 40px;
-    background-color: #41f6d7;
+    background-color: var(--cian2);
     top: -9px;
     left: -33px;
     border-radius: 3px;
