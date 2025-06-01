@@ -1,0 +1,165 @@
+
+/* 
+____________________________________________
+____________________________________________
+____________________________________________
+CONTAINER PRICE */
+#container-prices .swiper-slide {
+  background-image: url(img/order.svg);
+  background-position: 90% 85%;
+  width: 260px;
+  height: 200px;
+  font-size: 16px;
+  padding: 16px;
+}
+.container__description {
+  display: none;
+}
+#container-prices .swiper-slide__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+}
+#container-prices .swiper-slide__content p {
+  display: block;
+  position: relative;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  color: var(--darkBlack);
+}
+.container--price .swiper-slide p::before {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  color: var(--gray);
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0px;
+}
+.container--price .swiper-slide__content p:first-child::before {
+  content: "Ремонтные услуги";
+}
+.container--price .swiper-slide__content p:nth-child(2)::before {
+  content: "Цена";
+  position: absolute;
+}
+.container--price .swiper-slide__content p:last-child::before {
+  content: "Срок";
+  position: absolute;
+}
+.container__textInform {
+  margin: 16px;
+  max-width: 421px;
+}
+.container__textInform a {
+  font-size: 16px;
+  color: var(--darkBlack);
+  display: block;
+}
+.textInform__logo {
+  display: inline-block;
+  background-image: url(img/more.svg);
+  width: 24px;
+  height: 28px;
+  vertical-align: bottom;
+  position: relative;
+  top: 4px;
+}
+.footer__text {
+  margin-top: 74px;
+  margin-left: 24px;
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid var(--cian3);
+  color: var(--gray);
+}
+@media (min-width: 768px) {
+  .container__description {
+    display: flex;
+    margin: 0 40px;
+    color: var(--gray);
+  }
+  .container__description p {
+    margin-bottom: auto;
+  }
+  .container__description p:first-child {
+    width: 50%;
+    margin-right: 10px;
+  }
+  .container__description p:nth-child(2) {
+    width: 19%;
+  }
+  #container-prices .swiper-wrapper {
+    max-height: 100%;
+    width: auto;
+    gap: 0;
+    padding: 0;
+    margin: 24px;
+    border-radius: 6px;
+  }
+  #container-prices .swiper-slide {
+    width: 100%;
+    height: 64px;
+    background-position: 97% 50%;
+    font-size: 14px;
+    border: none;
+    border-radius: 0;
+    position: relative;
+  }
+  .container--price .swiper-slide:not(:last-child):after {
+    content: "";
+    width: 95%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--whiteGray);
+  }
+  #container-prices .swiper-slide__content {
+    flex-direction: row;
+    padding: 0;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .container--price .swiper-slide .swiper-slide__content p::before {
+    content: "";
+  }
+  .container--price .swiper-slide__content p:first-child {
+    width: 50%;
+    margin: 0;
+    margin-right: 10px;
+  }
+  .container--price .swiper-slide__content p:nth-child(2) {
+    margin: 0;
+    width: 19%;
+  }
+  .container--price .swiper-slide__content p:last-child {
+    margin: 0;
+  }
+  .container--price .container__readMore {
+    display: none;
+  }
+  .footer__text {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .footer__text .text__developers {
+    width: 33.33%;
+    text-align: left;
+  }
+  .footer__text .politics {
+    width: 33.33%;
+    text-align: center;
+  }
+  .footer__text .ofert {
+    width: 33.33%;
+    text-align: right;
+  }
+}

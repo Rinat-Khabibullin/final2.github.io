@@ -1,4 +1,6 @@
 import Swiper from 'swiper';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css/pagination';
 
 let mainList = document.querySelector('.main__list-services');
 let listItem = mainList.children;
@@ -12,20 +14,24 @@ for (let i = 0; i < listItem.length; i++) {
     })
 }
 
-// READ MORE BUTTON
+// READ MORE BUTTON.
 let main = document.querySelector(".main");
-let mainReadMoreBtn = main.querySelector(".read-more__button");
-let contentText = main.querySelector(".content__text");
+let mainReadMoreBtn = main.querySelector(".main__readMore");
+let contentText = mainReadMoreBtn.querySelector(".readMore__text");
+let buttonIcon = mainReadMoreBtn.querySelector(".readMore__icon");
+let listHeight = document.querySelector(".content__text");
 
-mainReadMoreBtn.addEventListener("click", function () {
-  if (mainReadMoreBtn.textContent === "Читать далее") {
-    contentText.classList.add("heightAuto");
-    mainReadMoreBtn.textContent = "Скрыть";
-  } else {
-    contentText.classList.remove("heightAuto");
-    mainReadMoreBtn.textContent = "Читать далее";
-  }
-});
+  mainReadMoreBtn.addEventListener("click", function () {
+    if (contentText.textContent == "Читать далее") {
+      contentText.textContent = "Скрыть";
+      buttonIcon.classList.add("rotateIcon");
+      listHeight.classList.add("hidenContent");
+    } else {
+      contentText.textContent = "Читать далее";
+      buttonIcon.classList.remove("rotateIcon");
+      listHeight.classList.remove("hidenContent");
+    }
+  });
 
 
 // ___________________________________
@@ -35,6 +41,7 @@ let swiperSlider = null;
 
 if (mql.matches) {
   swiperSlider = new Swiper(".swiper", {
+    modules: [Pagination],
     centeredSlides: false,
     pagination: {
     el: ".swiper-pagination",
@@ -119,16 +126,13 @@ let aside = document.querySelector('.aside');
 let buttonCloseAside = body.querySelector('.left__burger');
 let mainConteaner = body.querySelector('.div-blur');
 burger.addEventListener('click', function() {
-  body.classList.add('displayFlex');
   aside.classList.add('displayBlock');
   mainConteaner.classList.add('blur');
   buttonCloseAside.addEventListener('click', function() {
-    body.classList.remove('displayFlex');
     aside.classList.remove('displayBlock');
     mainConteaner.classList.remove('blur');
     })
   mainConteaner.addEventListener('click', function() {
-    body.classList.remove('displayFlex');
     aside.classList.remove('displayBlock');
     mainConteaner.classList.remove('blur');
   })
@@ -145,15 +149,15 @@ let chatFeebbackClose = chatFeebback.querySelector('.modal__closeBtn');
 function openChatButton() {
   chatFeebback.classList.add('displayBlock');
   mainConteaner.classList.add('blur');
-  body.classList.remove('displayFlex');
   aside.classList.remove('displayBlock');
   chatFeebbackClose.addEventListener('click', function() {
     chatFeebback.classList.remove('displayBlock');
     mainConteaner.classList.remove('blur');
-    aside.classList.remove('displayBlock');
-    
+    aside.classList.remove('displayBlock', 'zIndexMinus');
+    // aside.classList.remove('zIndexMinus');
   })
   mainConteaner.addEventListener('click', function() {
+    aside.classList.remove('zIndexMinus');
     chatFeebback.classList.remove('displayBlock');
     mainConteaner.classList.remove('blur');
     aside.classList.remove('displayBlock');
@@ -163,13 +167,18 @@ function openChatButton() {
 
 aisdeChatBtn.addEventListener('click', function() {
   openChatButton()
+  aside.classList.add('zIndexMinus');
+  asideTitle.textContent = "Обратная связь";
+  asideNameInp.classList.remove('visually-hidden');
+  asideEmailInp.classList.remove('visually-hidden');
+  asideMessageInp.classList.remove('visually-hidden');
+})
+menuChatBtn.addEventListener('click', function() {
+  openChatButton()
     asideTitle.textContent = "Обратная связь";
     asideNameInp.classList.remove('visually-hidden');
     asideEmailInp.classList.remove('visually-hidden');
     asideMessageInp.classList.remove('visually-hidden');
-})
-menuChatBtn.addEventListener('click', function() {
-  openChatButton()
 })
 // MODAL call
 let menuBtnCall = document.querySelector('.round-icon--call');
@@ -186,6 +195,7 @@ function openCallButton() {
   asideMessageInp.classList.add('visually-hidden');
   openChatButton()
   chatFeebbackClose.addEventListener('click', function() {
+    aside.classList.remove('zIndexMinus');
     chatFeebback.classList.remove('displayBlock');
     asideTitle.textContent = "Обратная связь";
     asideNameInp.classList.remove('visually-hidden');
@@ -199,5 +209,6 @@ menuBtnCall.addEventListener('click', function() {
 })
 
 asideBtnCall.addEventListener('click', function() {
-  openCallButton()
+  openCallButton();
+  aside.classList.add('zIndexMinus');
 })

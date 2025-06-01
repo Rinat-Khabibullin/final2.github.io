@@ -8,8 +8,6 @@ const loader = require('sass-loader');
 const GhPagesWebpackPlugin = require('gh-pages');
 
 module.exports = (env) => {
-	console.log('!!!!!!!!!!!!   ', path.resolve(__dirname, 'src', 'main.js'), '!!!!!!!!!!!')
-
 	return {
 		mode: env.mode ?? 'development',
 		entry: path.resolve(__dirname, 'src', 'main.js'),

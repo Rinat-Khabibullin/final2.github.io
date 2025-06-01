@@ -1,0 +1,64 @@
+/* HEADER 320 */
+.header {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--cian);
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  height: 88px;
+}
+.menu__left {
+  display: flex;
+  margin-left: 16px;
+  margin-right: 17px;
+}
+.menu__right {
+  display: flex;
+  margin-right: 16px;
+}
+.menu__right .menu__icon:not(:last-child) {
+  margin-right: 16px;
+}
+.menu__right::before {
+  content: "";
+  width: 2px;
+  height: 32px;
+  border-radius: 1px;
+  background-color: var(--whiteGray);
+  margin: auto;
+  margin-right: 20px;
+}
+.round-icon--burger {
+  background-image: url(img/burger.svg);
+}
+.round-icon--repair {
+  background-image: url(img/repair.svg);
+}
+.round-icon--checkstatus {
+  background-image: url(img/checkstatus.svg);
+}
+.menu__left .menu__icon {
+  margin-right: 16.73px;
+}
+.round-icon {
+  border: none;
+  padding: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: var(--pink);
+  margin: auto;
+}
+.menu__logo {
+  border: none;
+  padding: 0;
+  width: 96.54814910888672px;
+  height: 50.814815521240234px;
+  background: none;
+  background-image: url(img/Logo.svg);
+  margin: auto;
+}
+.menu__extra {
+  display: none;
+}

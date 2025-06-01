@@ -1,0 +1,182 @@
+
+/* ASIDE */
+.aside a {
+  text-decoration: none;
+  color: var(--darkBlack);
+}
+
+.aside {
+  position: absolute;
+  width: 320px;
+  height: auto;
+  top: 0;
+  left: 0;
+  padding-left: 24px;
+  padding-bottom: 30px;
+  box-shadow:
+    16px 0px 52px 0px rgba(14, 24, 80, 0.2),
+    -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+  transform: translateX(-150%);
+  background-color: var(--white);
+  z-index: 10;
+  transition: transform 0.3s;
+}
+
+/* ASIDE HEADER */
+.aside__header {
+  display: flex;
+  height: 83px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 24px 0;
+}
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 16.73px;
+}
+.icon {
+  background: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: opacity, 0.3s;
+}
+.icon:hover {
+  opacity: 60%;
+}
+.left__burger {
+  background: url(img/exit.svg) no-repeat;
+}
+.header__search {
+  background: url(img/search.svg) no-repeat;
+}
+.left__logo {
+  background: url(img/Grouplogo.svg) no-repeat;
+  border: none;
+  width: 97px;
+  height: 51px;
+  cursor: pointer;
+  transition: opacity, 0.3s;
+}
+.left__logo:hover {
+  opacity: 60%;
+}
+/* ASIDE MAIN */
+.menu__list {
+  margin: 0;
+  margin-top: 34px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.list__item {
+  height: 32px;
+  align-items: center;
+  transition: opacity, 0.3s;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  color: var(--darkBlack);
+}
+.list__item:hover {
+  opacity: 40%;
+}
+
+.list__item-active a {
+  position: relative;
+  color: var(--gray);
+}
+.list__item-active a::before {
+  content: "";
+  background-image: url(img/highlight.svg);
+  height: 32px;
+  width: 4px;
+  position: absolute;
+  top: -6px;
+  left: -24px;
+  height: 32px;
+  width: 4px;
+}
+
+/* ASIDE FOOTER */
+
+.aside__footer {
+margin-top: 50px;
+}
+.aside__footer .round-icon {
+  border: none;
+  width: 40px;
+  height: 40px;
+  margin-right: 13px;
+  cursor: pointer;
+  transition: hover, 0.3s;
+}
+
+.aside__footer .icon-call {
+  background: url(img/call2.svg) no-repeat 50% 50%;
+}
+.aside__footer .icon-chat {
+  background: url(img/chat.svg) no-repeat;
+}
+.aside__footer .icon-profile {
+  background: url(img/profile.svg) no-repeat;
+}
+.aside__footer .contacts__email {
+  display: block;
+  font-family: "TT Lakes";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  text-decoration: none;
+  margin-top: 11px;
+  color: var(--darkBlack);
+}
+.aside__footer .contacts__tel {
+  display: block;
+  font-family: "TT Lakes";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+  text-decoration: none;
+  color: var(--darkBlack);
+  margin-top: 12px;
+}
+.aside__footer .round-icon {
+  transition: opacity, 0.3s;
+}
+.aside__footer .round-icon:hover {
+  opacity: 60%;
+}
+.footer__lang {
+  display: flex;
+  list-style: none;
+  gap: 7px;
+  margin-top: 40px;
+}
+.lang__button {
+  padding: 0;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  text-transform: uppercase;
+  transition: opacity, 0.3s;
+  background: none;
+  color: var(--darkBlack);
+}
+.lang__button:hover {
+  opacity: 40%;
+  cursor: pointer;
+}
+.footer__lang .lang__button-active {
+  color: var(--gray);
+}

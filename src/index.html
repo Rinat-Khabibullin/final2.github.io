@@ -29,7 +29,6 @@
                 </div>
             </nav>
         </header>
-
         <main class="main">
             <!-- MAIN -->
             <div class="main__title">
@@ -63,7 +62,7 @@
                     </ul>
                 </div>
             </nav>
-                <div class="main__content">
+            <div class="main__content">
                 <div class="content__expand">
                     <div class="content__text">
                         <p>
@@ -76,8 +75,9 @@
                             советуют нас родным и близким.
                         </p>
                     </div>
-                    <div class="content__read-more">
-                        <button class="read-more__button"><span>Читать далее</span></button>
+                    <div class="main__readMore">
+                        <span class="readMore__icon"></span>
+                        <span class="readMore__text">Читать далее</span>
                     </div>
                 </div>
                 <div class="content__image">
@@ -96,7 +96,8 @@
                     <ul class="swiper-wrapper">
                         <li class="swiper-slide">
                             <a class="swiper-slide__content" href="#">
-                                <img src="img/lenovo.svg" alt="Иконка lenovo" class="swiper-slide__content-img item__content" />
+                                <img src="img/lenovo.svg" alt="Иконка lenovo"
+                                    class="swiper-slide__content-img item__content" />
                             </a>
                         </li>
                         <li class="swiper-slide">
@@ -107,7 +108,8 @@
                         </li>
                         <li class="swiper-slide">
                             <a class="swiper-slide__content" href="#">
-                                <img src="img/apple.svg" alt="Иконка apple" class="swiper-slide__content-img item__content" />
+                                <img src="img/apple.svg" alt="Иконка apple"
+                                    class="swiper-slide__content-img item__content" />
                             </a>
                         </li>
                         <li class="swiper-slide">
@@ -118,7 +120,8 @@
                         </li>
                         <li class="swiper-slide">
                             <a class="swiper-slide__content" href="#">
-                                <img src="img/bosh.svg" alt="Иконка bosh" class="swiper-slide__content-img item__content" />
+                                <img src="img/bosh.svg" alt="Иконка bosh"
+                                    class="swiper-slide__content-img item__content" />
                             </a>
                         </li>
                         <li class="swiper-slide">
@@ -128,17 +131,20 @@
                         </li>
                         <li class="swiper-slide">
                             <a class="swiper-slide__content" href="#">
-                                <img src="img/acer.svg" alt="Иконка acer" class="swiper-slide__content-img item__content" />
+                                <img src="img/acer.svg" alt="Иконка acer"
+                                    class="swiper-slide__content-img item__content" />
                             </a>
                         </li>
                         <li class="swiper-slide">
                             <a class="swiper-slide__content" href="#">
-                                <img src="img/sony.svg" alt="Иконка sony" class="swiper-slide__content-img item__content" />
+                                <img src="img/sony.svg" alt="Иконка sony"
+                                    class="swiper-slide__content-img item__content" />
                             </a>
                         </li>
                         <li class="swiper-slide">
                             <a class="swiper-slide__content" href="#">
-                                <img src="img/lenovo.svg" alt="Иконка lenovo" class="swiper-slide__content-img item__content" />
+                                <img src="img/lenovo.svg" alt="Иконка lenovo"
+                                    class="swiper-slide__content-img item__content" />
                             </a>
                         </li>
                     </ul>
@@ -280,27 +286,29 @@
     <div class="div-blur"></div>
     <!-- ASIDE -->
     <aside class="aside">
-        <header class="aside__header">
-            <div class="header__left">
-                <button class="left__burger icon"></button>
-                <a class="left__logo" href="#"></a>
-            </div>
-            <button class="header__search icon"></button>
-        </header>
-        <main class="aside__menu">
-            <ul class="menu__list">
-                <li class="list__item list__item-active">
-                    <a href="#">Ремонт техники</a>
-                </li>
-                <li class="list__item"><a href="#">Услуги и сервисы</a></li>
-                <li class="list__item"><a href="#">Корпоративным клиентам</a></li>
-                <li class="list__item"><a href="#">Продавцам техники</a></li>
-                <li class="list__item"><a href="#">Партнерам</a></li>
-                <li class="list__item"><a href="#">Производителям</a></li>
-                <li class="list__item"><a href="#">Наши сервисные центры</a></li>
-                <li class="list__item"><a href="#">Контакты</a></li>
-            </ul>
-        </main>
+        <div class="asideWrapper">
+            <header class="aside__header">
+                <div class="header__left">
+                    <button class="left__burger icon"></button>
+                    <a class="left__logo" href="#"></a>
+                </div>
+                <button class="header__search icon"></button>
+            </header>
+            <main class="aside__menu">
+                <ul class="menu__list">
+                    <li class="list__item list__item-active">
+                        <a href="#">Ремонт техники</a>
+                    </li>
+                    <li class="list__item"><a href="#">Услуги и сервисы</a></li>
+                    <li class="list__item"><a href="#">Корпоративным клиентам</a></li>
+                    <li class="list__item"><a href="#">Продавцам техники</a></li>
+                    <li class="list__item"><a href="#">Партнерам</a></li>
+                    <li class="list__item"><a href="#">Производителям</a></li>
+                    <li class="list__item"><a href="#">Наши сервисные центры</a></li>
+                    <li class="list__item"><a href="#">Контакты</a></li>
+                </ul>
+            </main>
+        </div>   
         <footer class="aside__footer">
             <div class="footer__contacts">
                 <button class="round-icon icon-call"><a href="#"></a></button>
@@ -325,7 +333,8 @@
                 <input type="tel" placeholder="Телефон" name="tel" required>
                 <input class="content__emailInp" type="email" placeholder="Электронная почта" name="email">
                 <textarea class="content__messageInp" type="text" placeholder="Сообщение" name="message"></textarea>
-                <p class="privacy-notice">Нажимая "Отправить", вы даете согласие на <a href="#">обработку персональных данных</a> и соглашаетесь с нашей <a href="#">политикой конфиденциальности</a></p>
+                <p class="privacy-notice">Нажимая "Отправить", вы даете согласие на <a href="#">обработку персональных
+                        данных</a> и соглашаетесь с нашей <a href="#">политикой конфиденциальности</a></p>
                 <input type="submit" class="content__submit" value=""></input>
             </form>
         </div>
